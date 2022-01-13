@@ -15,7 +15,7 @@ class ModelTests(TestCase):
             title='Krew elfów, Tom 2',
             cover_link='',
             isbn_13='9788370540791',
-            liczba_stron=295,
+            pages_count=295,
             publication_language='pl'
         )
         self.assertEqual(str(book), book.title)

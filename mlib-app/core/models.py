@@ -7,7 +7,7 @@ class Book(models.Model):
     authors = models.ManyToManyField('Author')
     isbn_13 = models.CharField(max_length=13)
     cover_link = models.TextField()
-    liczba_stron = models.IntegerField()
+    pages_count = models.IntegerField()
     publication_language = models.CharField(max_length=2)
 
     def __str__(self):
