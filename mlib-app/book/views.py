@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import Book
+from core.models import Book, Author
 from django.views.generic.list import ListView
 
 

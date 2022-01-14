@@ -17,6 +17,7 @@ class Book(models.Model):
 class Author(models.Model):
     """Author model to connect with books"""
     name = models.CharField(max_length=255)
+    books = models.ManyToManyField('Book')
 
     def __str__(self):
         return self.name

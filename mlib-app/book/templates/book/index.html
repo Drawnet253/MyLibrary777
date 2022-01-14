@@ -37,7 +37,7 @@
           <img src="{{book.cover_link}}">
         </td>
         <td>{{book.title}}</td>
-        <td>Authors</td>
+        <td>{% for author in book.authors.all %}{{author.name}}<br> {% endfor %}</td>
         <td>{{book.pages_count}}</td>
         <td>{{book.publication_language}}
       </tr>
