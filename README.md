@@ -22,9 +22,9 @@ that are:
 
 # API endpoints:
 ## restapi/all_books/
-List of all books. Can add new book. Generic view. JSON data
+Generic view. JSON data. List of all books. Can add new book.
 ## restapi/filtered_books/
-List of all book that can be filtered by GET parameters:
+Generic view. JSON data. List of all book that can be filtered by GET parameters:
 
 * title - title of the book
 * author - author name of the book
