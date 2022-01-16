@@ -3,12 +3,14 @@ from core.models import Book, Author
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-
+    '''Author Serializer needed because of relation to books'''
     class Meta:
         model = Author
         fields = ('name',)
 
+
 class BookSerializer(serializers.ModelSerializer):
+    '''Books serializer'''
     authors = AuthorSerializer(read_only=True, many=True)
 
     class Meta:

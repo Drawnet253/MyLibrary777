@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('book/', include('book.urls')),
     path('', include('restapi.urls')),
-    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    re_path(r'^static/(?P<path>.*)$',
+            serve,
+            {'document_root': settings.STATIC_ROOT}),
 ]

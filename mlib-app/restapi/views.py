@@ -1,5 +1,5 @@
 from core.models import Author, Book
-from restapi.serializers import AuthorSerializer, BookSerializer
+from restapi.serializers import BookSerializer
 from rest_framework.generics import ListAPIView, ListCreateAPIView
 
 
@@ -29,7 +29,8 @@ class FilteredBookList(ListAPIView):
             authors_list = [x.id for x in authors_query]
             queryset = queryset.filter(authors__in=authors_list)
         if language is not None:
-            queryset = queryset.filter(publication_language__icontains=language)
+            queryset = queryset.filter(
+                publication_language__icontains=language)
         if pub_start and not pub_end:
             queryset = queryset.filter(
                 published_year__gte=pub_start)
