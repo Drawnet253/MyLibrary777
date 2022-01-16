@@ -1,1 +1,2 @@
-web: gunicorn mlib-app.wsgi
+web: sh -c cd ./mlib-app
+web: gunicorn app.wsgi
