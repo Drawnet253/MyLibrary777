@@ -26,10 +26,10 @@ Generic view. JSON data. List of all books. Can add new book.
 ## [https://mylibrary7.herokuapp.com/restapi/filtered_books/](https://mylibrary7.herokuapp.com/restapi/filtered_books/)
 Generic view. JSON data. List of all book that can be filtered by GET parameters:
 * title - title of the book, [example](https://mylibrary7.herokuapp.com/restapi/filtered_books/?title=Eragon)
-* author - author name of the book, example
-* lang - language of the publication
-* pub_start - start year of publishing
-* pub_end =- end year of publishing
+* author - author name of the book, [example](https://mylibrary7.herokuapp.com/restapi/filtered_books/?author=tolkien)
+* lang - language of the publication, [example](https://mylibrary7.herokuapp.com/restapi/filtered_books/?lang=pl)
+* pub_start - start year of publishing, [example](https://mylibrary7.herokuapp.com/restapi/filtered_books/?pub_start=2020)
+* pub_end - end year of publishing, [example](https://mylibrary7.herokuapp.com/restapi/filtered_books/?pub_end=2000)
 
 ### Development notes
 To run tests in development environment use command:
