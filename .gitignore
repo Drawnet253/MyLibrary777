@@ -131,3 +131,5 @@ dmypy.json
 
 # macOs stupid file:
 *.DS_Store
+
+*heroku_cred.txt
