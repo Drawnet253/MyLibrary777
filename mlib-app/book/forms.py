@@ -7,7 +7,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class CreateBookForm(forms.ModelForm):
-    '''Form to create the book'''
+    '''POST Form to create the book '''
 
     class Meta:
         model = Book
@@ -43,11 +43,11 @@ class CreateBookForm(forms.ModelForm):
                 ),
             required=False,
             validators=[validate_cover_link],
-            help_text='Please paste link to the cover image (only png and jpg)'
+            help_text='Please paste link to the cover image'
     )
     pages_count = forms.IntegerField(
             label='(*)Number of pages',
-            validators=[MinValueValidator(1)]
+            validators=[MinValueValidator(0)]
     )
     publication_language = forms.CharField(
         label='(*)Publication Language',
@@ -62,7 +62,7 @@ class CreateBookForm(forms.ModelForm):
 
 
 class SearchForm(forms.ModelForm):
-    '''Search form'''
+    '''Search form - GET'''
 
     class Meta:
         model = Book
@@ -76,4 +76,25 @@ class SearchForm(forms.ModelForm):
         context['language'] = self.get_queryset()
         context['from_date'] = self.get_queryset()
         context['to_date'] = self.get_queryset()
+        return context
+
+
+class ImportBooksForm(forms.ModelForm):
+    '''POST Form to ask for keywords for Google API'''
+
+    class Meta:
+        model = Book
+        fields = ['title', 'authors', 'pages_count', 'isbn_13',
+                  'publication_language', 'cover_link', 'published_year']
+
+    def get_context_data(self, **kwargs):
+        context = super(BooksImportView, self).get_context_data(**kwargs)
+        context['keywords'] = self.get_queryset()
+        context['intitle'] = self.get_queryset()
+        context['inauthor'] = self.get_queryset()
+        context['inpublisher'] = self.get_queryset()
+        context['subject'] = self.get_queryset()
+        context['isbn'] = self.get_queryset()
+        context['lccn'] = self.get_queryset()
+        context['oclc'] = self.get_queryset()
         return context
