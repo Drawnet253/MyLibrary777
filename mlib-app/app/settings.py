@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'core',
     'book',
+    'restapi',
 ]
 
 MIDDLEWARE = [

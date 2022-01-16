@@ -10,6 +10,7 @@ class BookList(ListCreateAPIView):
 
 
 class FilteredBookList(ListAPIView):
+    '''List of books, can be filtered by 5 parameters.GET.'''
     serializer_class = BookSerializer
 
     def get_queryset(self):
