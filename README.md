@@ -1,6 +1,6 @@
 # MyLibrary777
 ADAM PAŁUCKI, 01.2022
-Example of using Google Books API. There are clasical www views and restapi too.
+Example of using Google Books API. There are clasical www views and restapi too. I used django framework.
 
 Managing library links:
 ## [https://mylibrary7.herokuapp.com/book/](https://mylibrary7.herokuapp.com/book/)
