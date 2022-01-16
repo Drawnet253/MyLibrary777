@@ -91,7 +91,7 @@ def books_import(request):
             true_count += 1
 
     if true_count == 0:
-        return redirect('/import')
+        return redirect('index')
 
     # Remove empty items
     params_dict = {k: v for k, v in params_dict.items() if v}
