@@ -25,8 +25,8 @@ that are:
 Generic view. JSON data. List of all books. Can add new book.
 ## [https://mylibrary7.herokuapp.com/restapi/filtered_books/](https://mylibrary7.herokuapp.com/restapi/filtered_books/)
 Generic view. JSON data. List of all book that can be filtered by GET parameters:
-* title - title of the book
-* author - author name of the book
+* title - title of the book, [example](https://mylibrary7.herokuapp.com/restapi/filtered_books/?title=Eragon)
+* author - author name of the book, example
 * lang - language of the publication
 * pub_start - start year of publishing
 * pub_end =- end year of publishing
