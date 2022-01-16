@@ -24,8 +24,8 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-1">&nbsp;</div>
-    <div class="col-md-10">
+
+    <div class="col-md-12">
       <form class="card card-sm">{% csrf_token %}
         <div class="card-body row no-gutters align-items-center">
 
@@ -52,12 +52,14 @@
           <div class="col-md-2">
             <a class="btn btn-primary" href="/book/import">To Import >></a>
           </div>
+          <div class="col-md-2">
+            <a class="btn btn-primary" href="/book/new">Add Book >></a>
+          </div>
           </div>
         </div>
       </div>
     </form>
   </div>
-  <div class="col-md-1">&nbsp;</div>
 </div>
 <br>
 {% if book_list.all %}
