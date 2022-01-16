@@ -8,7 +8,7 @@ class Book(models.Model):
     """Book model"""
     title = models.CharField(max_length=255, validators=[validate_title])
     authors = models.ManyToManyField('Author')
-    isbn_13 = models.IntegerField(validators=[validate_isbn13], default=0)
+    isbn_13 = models.BigIntegerField(validators=[validate_isbn13], default=0)
     cover_link = models.TextField(
         validators=[validate_cover_link],
         default='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Book_%2889362%29_-_The_Noun_Project.svg/1024px-Book_%2889362%29_-_The_Noun_Project.svg.png')
