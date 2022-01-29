@@ -17,7 +17,7 @@ def sample_book(**params):
         'title': 'Sample title of the book',
         'pages_count': 1,
         'publication_language': 'US',
-        'isbn_13': '1234567890123'
+        'isbn_13': '9788364863011'
     }
     defaults.update(params)
     book = Book.objects.create(**defaults)
@@ -42,3 +42,21 @@ class BooksListViewTest(TestCase):
         bad_isbn13 = '9781734314509'
 
         self.assertFalse(is_isbn13(bad_isbn13))
+
+    def test_filter_title(self):
+        '''Test that filtering books by title is working'''
+        keyword = 'Learning of programming in python'
+        book1 = sample_book(title=keyword)
+        book2 = sample_book(title='Learning' + keyword)
+        book3 = sample_book(title='Third book')
+
+        res = self.client.get(BOOKS_URL, {'title': 'programming'})
+
+        self.assertIsNotNone(res.context)
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
+        print('>>> START:'+str(res.context['book_list'])+'END')
+
+        queryset = Book.objects.filter(title__icontains='programming')
+        print('>>> FILTER:'+str(queryset)+'END')
+        self.assertQuerysetEqual(res.context['book_list'], queryset, ordered=False)
+        self.assertEqual(len(res.context['book_list']), 2)
